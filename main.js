@@ -60,6 +60,8 @@ var dataSecond = {
 
 
 
+
+
 var speedData = {
   labels: ["2014", "2015", "2016", "2017", "2018", "2019", "2020"],
   datasets: [dataFirst, dataSecond, dataThird, dataForth, dataFifth, dataSixth]
@@ -82,33 +84,48 @@ var lineChart = new Chart(speedCanvas, {
   options: chartOptions
 });
 
+// const DATA_COUNT = 5;
+// const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
-
-
-// var speedCanvas = document.getElementById("speedChart");
-
-
-// var speedData = {
-//   labels: ["2", "4", "6", "8", "10"],
-//   datasets: [{
-//     label: "Car Speed (mph)",
-//     data: [2, 4, 6, 8, 10],
-//   }]
-// };
-
-// var chartOptions = {
-//   legend: {
-//     display: true,
-//     position: 'top',
-//     labels: {
-//       boxWidth: 80,
-//       fontColor: 'black'
+// const data = {
+//   labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+//   datasets: [
+//     {
+//       label: 'Dataset 1',
+//       data: Utils.numbers(NUMBER_CFG),
+//       backgroundColor: Object.values(Utils.CHART_COLORS),
 //     }
-//   }
+//   ]
 // };
 
-// var lineChart = new Chart(speedCanvas, {
-//   type: 'line',
-//   data: speedData,
-//   options: chartOptions
-// });
+
+let data = document.getElementById('piechart').getContext('2d')
+
+
+let dataforchart = {
+  labels: [
+    'React',
+    'Angular',
+    'Vue.js'
+  ],
+  datasets: [{
+    label: 'The most popular',
+    data: [57.5, 31.5, 11],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+let pieChart = new Chart(data,{
+  type: 'pie',
+    data: dataforchart,
+  });
+
+  
+
+
+
+
